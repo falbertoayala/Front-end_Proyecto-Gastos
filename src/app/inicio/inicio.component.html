@@ -37,21 +37,25 @@
    <!--/Second slide-->
   
    <!--Third slide-->
-  <mdb-carousel-item>
-    <div id="sign">
+  <mdb-carousel-item> 
+   
+    <div id="sign" *ngIf="createMode">
       <!-- Default form login -->
-          <form class="text-center border border-light p-5">
+          <form class="text-center border border-light p-5" >
 
               <p class="h4 mb-4">Sign in</p>
 
               <!-- User -->
-              <input type="text" id="defaultLoginFormUser" class="form-control mb-4" placeholder="User">
+              <input type="text" id="defaultLoginFormUser" name="username" #username="ngModel" [class.is-valid]="username.valid"
+              [class.is-invalid]="username.invalid" class="form-control mb-4" [(ngModel)]="newUser.username" required placeholder="Usuario">
             
               <!-- Email -->
-              <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+              <input type="email" id="defaultLoginFormEmail" name="usermail" #usermail="ngModel" [class.is-valid]="usermail.valid"
+              [class.is-invalid]="usermail.invalid" class="form-control mb-4" [(ngModel)]="newUser.usermail" required  placeholder="E-mail">
             
               <!-- Password -->
-              <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+              <input type="password" id="defaultLoginFormPassword" name="userpassword" #userpassword="ngModel" [class.is-valid]="userpassword.valid"
+              [class.is-invalid]="userpassword.invalid"  class="form-control mb-4" [(ngModel)]="newUser.userpassword" required placeholder="Password">
             
               <div class="d-flex justify-content-around">
                 <div>
@@ -85,6 +89,7 @@
   <!-- Default form login -->
            
   </div>
+
   </mdb-carousel-item>
   <!--/Third slide-->
  
