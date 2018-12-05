@@ -19,13 +19,14 @@ export class InicioComponent implements OnInit {
     this.createMode = false;
   }
 
-  createUser() : void{
+   /* createUser() : void{
     this.createMode=true;
     this.newUser = new Usercreate();
 
-  }
-
+  } */
   ngOnInit() {
+    this.newUser = new Usercreate();
+    this.createMode=true;
   }
 
   onCreate() : void{
